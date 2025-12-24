@@ -29,9 +29,6 @@ uint16_t InetAddress::toPort() const{
 std::string InetAddress::toIpPort() const{
     return toIp() + ":" + std::to_string(toPort());
 }
-const struct sockaddr_in& InetAddress::getSockAddrInet() const{
-    return addr_;
-}
 
 
 

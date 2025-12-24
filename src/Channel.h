@@ -68,7 +68,7 @@ class Channel : noncopyable
         const int fd_; //Channel负责的fd
         int events_; //注册感兴趣的事件
         int revents_; //poller返回的具体事件
-        int index_; //在poller中的状态，第几个channel
+        int index_; //在poller中的状态，未添加、已添加、已删除
 
         std::weak_ptr<void> tie_;
         bool tied_;
