@@ -22,4 +22,7 @@ boost::ptr_vector	std::vector<std::unique_ptr>	指针容器
 mkdir build && cd build
 cmake..
 make
+## 致谢
+感谢陈硕 (@chenshuo) 创作的优秀 muduo 网络库
+参考了 asio、libevent 等优秀网络库的设计思想
 
