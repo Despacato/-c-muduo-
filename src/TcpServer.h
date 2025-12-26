@@ -9,6 +9,7 @@
 #include <memory>
 #include "Callbacks.h"
 #include <string>
+#include <unordered_map>
 
 
 
@@ -32,7 +33,7 @@ public:
     void setConnectionCallback(const ConnectionCallback &cb) {connectionCallback_ = cb;}
     void setMessageCallback(const MessageCallback &cb){ messageCallback_ = cb;}
     void setWriteCallback(const WriteCompleteCallback &cb) {writeCompleteCallback_ = cb;}
-    void setThreadNum(int numThreads;)
+    void setThreadNum(int numThreads);
 
     void start();
 private:
@@ -42,7 +43,7 @@ private:
 
     using ConnectionMap = std::unordered_map<std::string,TcpConnectionPtr>;
     EventLoop* loop_;
-    const std::string inPort_;
+    const std::string ipPort_;
     const std::string name_;
     std::unique_ptr<Acceptor> acceptor_; //运行在mainLoop，负责
     std::shared_ptr<EventLoopThreadPool> threadPool_; //subloop线程池
